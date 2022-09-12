@@ -4,3 +4,5 @@ tensorflow_datasets
 tensorflowjs
 numpy
 matplotlib
+ipywidgets
+pandas
