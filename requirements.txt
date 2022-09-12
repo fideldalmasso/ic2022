@@ -1,5 +1,6 @@
 ipykernel
 tensorflow
 tensorflow_datasets
+tensorflowjs
 numpy
 matplotlib
