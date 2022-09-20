@@ -6,3 +6,4 @@ numpy
 matplotlib
 ipywidgets
 pandas
+opencv-python
