@@ -3,8 +3,9 @@ import cv2
 HEIGHT = 299
 WIDTH = 299
 
-for type in ['COVID','Normal']:
-    for i in range(1,101):
+# for type in ['Viral Pneumonia']:
+for type in ['COVID','Normal','Viral Pneumonia']:
+    for i in range(1,1001):
         
         IMAGE_FILENAME = f'./dataset/{type}/images/{type}-{i}.png'
         MASK_FILENAME = f'./dataset/{type}/masks/{type}-{i}.png'
