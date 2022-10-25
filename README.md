@@ -12,20 +12,20 @@ Este trabajo tiene como objetivo comprender el uso y funcionamiento de redes neu
 ## Screenshots
 ### Modelo binario
 <p float="center">
-<img src="screenshots/screenshot-01.png"width="96%"/>
+<img src="TP1/screenshots/screenshot-01.png"width="96%"/>
 </p>
 <p float="center">
-<img src="screenshots/screenshot-02.png" width="48%"/>
-<img src="screenshots/screenshot-03.png" width="48%"/>
+<img src="TP1/screenshots/screenshot-02.png" width="48%"/>
+<img src="TP1/screenshots/screenshot-03.png" width="48%"/>
 </p>
 
 ### Modelo categórico
 <p float="center">
-<img src="screenshots/screenshot-04.png"width="96%"/>
+<img src="TP1/screenshots/screenshot-04.png"width="96%"/>
 </p>
 <p float="center">
-<img src="screenshots/screenshot-05.png" width="48%"/>
-<img src="screenshots/screenshot-06.png" width="48%"/>
+<img src="TP1/screenshots/screenshot-05.png" width="48%"/>
+<img src="TP1/screenshots/screenshot-06.png" width="48%"/>
 </p>
 
 ## Cómo ejecutar

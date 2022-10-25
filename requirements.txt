@@ -7,3 +7,4 @@ matplotlib
 ipywidgets
 pandas
 opencv-python
+pygad
