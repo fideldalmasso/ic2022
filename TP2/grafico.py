@@ -8,11 +8,10 @@ import matplotlib.pyplot as plt
 
 def fitness2(num):
     fitness=0
-    xfs = int(num/10)%10
-    yfs = num%10
+    xfs = ((num/16)/16)*10  #256 -> 12 % 10 -> 2
+    yfs = ((num%16)/16)*10
     for i in range(0,10):
         for j in range(0,10):
-
             fitness+= math.sqrt((i-xfs)**2  + (j-yfs)**2)*matriz[i][j]
         
     return -fitness
@@ -30,7 +29,7 @@ matriz = [
     [0,6,2,8,7,1,2,1,5,3]
 ]
 
-valoresx = range(0,100)
+valoresx = range(0,256)
 y = [fitness2(x) for x in valoresx]
 print(y.index(max(y)))
 print(max(y))
