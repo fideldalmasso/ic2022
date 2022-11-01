@@ -1,6 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 # https://jakevdp.github.io/PythonDataScienceHandbook/04.12-three-dimensional-plotting.html
+
+def fitness_func(solution):
+    x = solution[0]
+    y = solution[1]
+    z=0
+    for i in range(0,10):
+        for j in range(0,10):
+            z+= math.sqrt((i-x)**2  + (j-y)**2)*matriz[i][j]
+    return 1/z
 
 matriz = [
     [5,2,4,8,9,0,3,3,8,7],
@@ -14,6 +24,12 @@ matriz = [
     [4,5,9,6,3,9,7,6,5,10],
     [0,6,2,8,7,1,2,1,5,3]
 ]
-a = np.random.random((16, 16))
-plt.imshow(matriz, cmap='hot', interpolation='nearest')
+matriz2 = [[0 for _ in range(10)] for _ in range(10)]
+for i in range(0,10):
+    for j in range(0,10):
+        matriz2[i][j]=fitness_func([i,j])
+        
+fig,ax = plt.subplots(2)
+ax[0].imshow(matriz2, cmap='hot', interpolation='nearest')
+ax[1].imshow(matriz, cmap='hot', interpolation='nearest')
 plt.show()

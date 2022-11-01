@@ -2,6 +2,11 @@ import pygad
 import math
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.cm as cm
+
+
+arr = []
+arr2 = []
 
 matriz = [
     [5,2,4,8,9,0,3,3,8,7],
@@ -19,14 +24,11 @@ matriz = [
 def fitness_func(solution, solution_idx):
     x = solution[0]
     y = solution[1]
-    # Z = -(100*(x**2 - y)**2 + (1 - x)**2)
     z=0
     for i in range(0,10):
         for j in range(0,10):
             z+= math.sqrt((i-x)**2  + (j-y)**2)*matriz[i][j]
-        
     return 1/z
-    # return Z
 
 last_fitness = 0
 def on_generation(ga_instance):
@@ -39,6 +41,12 @@ def on_generation(ga_instance):
     for x in ga_instance.population:
         print(f'[{int(x[0])},{int(x[1])}]',end=" ")
     print("")
+    
+    global arr 
+    arr.append(ga_instance.best_solution(pop_fitness=ga_instance.last_generation_fitness)[0])
+    global arr2
+    arr2.append(ga_instance.best_solution(pop_fitness=ga_instance.last_generation_fitness)[1])
+    
     last_fitness = ga_instance.best_solution(pop_fitness=ga_instance.last_generation_fitness)[1]
 
 ga_instance = pygad.GA(num_generations=20,
@@ -55,9 +63,24 @@ ga_instance = pygad.GA(num_generations=20,
 ga_instance.run()
 
 
+
 solution, solution_fitness, solution_idx = ga_instance.best_solution(ga_instance.last_generation_fitness)
 print("Solution", solution)
 print("Fitness value of the best solution = {solution_fitness}".format(solution_fitness=solution_fitness))
 
 ga_instance.plot_fitness()
 ga_instance.plot_genes()
+
+# arr = ga_instance.solutions
+# arr2 = ga_instance.solutions_fitness
+x = [x[0] for x in arr]
+ys = [x[1] for x in arr]
+colors= [1-x/max(arr2) for x in arr2]
+# colors = cm.rainbow(np.linspace(0, 1, len(ys)))
+colors2 = [[x]*3 for x in colors]
+plt.grid(True)
+plt.scatter(x, ys, color=colors2)
+plt.plot(x, ys)
+plt.xlim([0,10])
+plt.ylim([0,10])
+plt.show()
