@@ -31,7 +31,14 @@ matriz = [
 
 valoresx = range(0,256)
 y = [fitness2(x) for x in valoresx]
+num = y.index(max(y))
+xfs = ((num/16)/16)*10  #256 -> 12 % 10 -> 2
+yfs = ((num%16)/16)*10
 print(y.index(max(y)))
 print(max(y))
-plt.plot(valoresx, y, color="red")
+print("x: "+str(xfs)+" y:"+ str(yfs))
+fig, ax = plt.subplots(2)
+ax[0].plot(valoresx, y, color="red")
+a = np.reshape(y,(16,16))
+ax[1].imshow(a,cmap='hot', interpolation='nearest')
 plt.show()
