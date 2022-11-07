@@ -42,7 +42,7 @@ def fitness2(num):
 
             fitness+= math.sqrt((i-xfs)**2  + (j-yfs)**2)*matriz[i][j]
         
-    return -fitness
+    return 1/fitness
 
 def fitness_func(solution, solution_idx):
     # output = numpy.sum(solution*function_inputs)
@@ -57,9 +57,9 @@ def fitness_func(solution, solution_idx):
 
             fitness+= math.sqrt((i-xfs)**2  + (j-yfs)**2)*matriz[i][j]
         
-    return -fitness
+    return 1/fitness
 
-num_generations = 50    # Number of generations.
+num_generations = 15    # Number of generations.
 num_parents_mating = 4  # Number of solutions to be selected as parents in the mating pool.
 sol_per_pop = 6        # Number of solutions in the population.
 num_genes = len(function_inputs)
@@ -84,8 +84,7 @@ ga_instance = pygad.GA(num_generations=num_generations,
                        keep_elitism=2,
                        init_range_low=0,
                        init_range_high=2,
-                       gene_type=int,
-                       allow_duplicate_genes= False                    
+                       gene_type=int,             
 )
 # Running the GA to optimize the parameters of the function.
 ga_instance.run()
