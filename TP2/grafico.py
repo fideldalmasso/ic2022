@@ -14,7 +14,7 @@ def fitness2(num):
         for j in range(0,10):
             fitness+= math.sqrt((i-xfs)**2  + (j-yfs)**2)*matriz[i][j]
         
-    return -fitness
+    return 1/fitness
 
 matriz = [
     [5,2,4,8,9,0,3,3,8,7],

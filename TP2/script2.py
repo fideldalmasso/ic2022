@@ -68,19 +68,25 @@ solution, solution_fitness, solution_idx = ga_instance.best_solution(ga_instance
 print("Solution", solution)
 print("Fitness value of the best solution = {solution_fitness}".format(solution_fitness=solution_fitness))
 
+
+arr = ga_instance.solutions
+arr2 = ga_instance.solutions_fitness
+
+print(arr)
+x = [x[0]+0.5 for x in arr]
+y = [x[1]+0.5 for x in arr]
+colors= [1-(x/max(arr2)) for x in arr2]
+colors2 = [[x]*3 for x in colors]
+plt.grid(True)
+plt.scatter(x, y, color=colors2)
+plt.plot(x, y)
+plt.xticks(range(0,10))
+plt.yticks(range(0,10))
+# plt.xlim([0,10])
+# plt.ylim([0,10])
+# plt.gca().invert_yaxis()
+plt.show()
+
 ga_instance.plot_fitness()
 ga_instance.plot_genes()
 
-# arr = ga_instance.solutions
-# arr2 = ga_instance.solutions_fitness
-x = [x[0] for x in arr]
-ys = [x[1] for x in arr]
-colors= [1-x/max(arr2) for x in arr2]
-# colors = cm.rainbow(np.linspace(0, 1, len(ys)))
-colors2 = [[x]*3 for x in colors]
-plt.grid(True)
-plt.scatter(x, ys, color=colors2)
-plt.plot(x, ys)
-plt.xlim([0,10])
-plt.ylim([0,10])
-plt.show()
