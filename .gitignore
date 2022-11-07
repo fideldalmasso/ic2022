@@ -1,3 +1,5 @@
 ~
 tfjs_target_dir
 modelo_exportado.h5
+genetic.pkl
+*.tmp

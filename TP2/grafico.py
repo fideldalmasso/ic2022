@@ -5,6 +5,7 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.signal import argrelextrema
 
 def fitness2(num):
     fitness=0
@@ -31,6 +32,7 @@ matriz = [
 
 valoresx = range(0,256)
 y = [fitness2(x) for x in valoresx]
+print(argrelextrema(np.array(y), np.greater))
 num = y.index(max(y))
 xfs = ((num/16)/16)*10  #256 -> 12 % 10 -> 2
 yfs = ((num%16)/16)*10
