@@ -2,3 +2,7 @@
 tfjs_target_dir
 modelo_exportado.h5
 genetic.pkl
+<<<<<<< HEAD
+=======
+*.tmp
+>>>>>>> 420a6ac7af9b6f44710cb0e5fd551ac4efd3a426
